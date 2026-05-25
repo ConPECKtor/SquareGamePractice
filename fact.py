@@ -24,8 +24,6 @@ def createFigure():
 
 def gameTick():
     global currentAttempt, square, currentTime
-
-
     if (currentAttempt >= 30):
         print(f'Конец! Счёт P1 = {p1Points}, P2 = {p2Points}')
         return
@@ -37,7 +35,6 @@ def gameTick():
     currentAttempt += 1
     if (currentAttempt % 5 == 0):
         currentTime = cutTime(currentTime)
-
 
 
 def delete(event):
@@ -52,7 +49,7 @@ def delete(event):
     canvas.delete(square)
     
     if fillColor == outlineColor:
-        if event.char == 'q':
+        if (event.char == 'q'):
             p1Points += 1
         else:
             p2Points += 1
