@@ -68,19 +68,3 @@ canvas.focus_set()
 gameTick()
 
 root.mainloop() 
-
-
-
-
-
-# if (canvas.itemcget(square, 'fill') == canvas.itemcget(square, 'outline'))
-
-
-
-# def fn(event):
-#     print(f'Pressed button {event.char}')
-
-
-
-
-
