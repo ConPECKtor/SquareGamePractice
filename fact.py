@@ -43,21 +43,27 @@ def gameTick():
 def delete(event):
     global p1Points, p2Points
 
-    fillСolor = canvas.itemcget(square, 'fill')
-    outlineСolor = canvas.itemcget(square, 'outline')
+    fillColor = canvas.itemcget(square, 'fill')
+    outlineColor = canvas.itemcget(square, 'outline')
 
     if not canvas.find_withtag(square):
         return
 
     canvas.delete(square)
-
-    if fillСolor != outlineСolor:
-        return
-        
-    if event.char == 'q':
-        p1Points += 1
+    
+    if fillColor == outlineColor:
+        if event.char == 'q':
+            p1Points += 1
+        else:
+            p2Points += 1
+       
     else:
-        p2Points += 1
+        if (event.char == 'q'):
+            p1Points -= 1
+        else:
+            p2Points -= 1
+
+    
 
 canvas.bind('q', delete) 
 canvas.bind('p', delete) 
